@@ -1,0 +1,22 @@
+function lightReset() {
+    if(Decimal.lt(player.potentialLight,1))return
+    let potL = player.potentialLight
+    player.points = player.startingPoints
+    player.totalPoints = player.startingPoints
+    player.rgb = [0,0,0]
+    player.rgbMin = [0,0,0]
+    player.rgbMinCost = new Decimal("1e6")
+    player.rgbMax = [1,1,1]
+    player.rgbMaxCost = new Decimal("100")
+    player.colourMulti = [0,0,0]
+    player.colourMultiCost = new Decimal("1000")
+    player.hexCode = "#000000"
+    player.light = Decimal.plus(player.light,potL)
+    player.totalLight = Decimal.plus(player.totalLight,potL)
+}
+
+function buyLightUpgrade(x) {
+    if(Decimal.lt(player.light,lightUpgradeCosts[x]))return
+    player.light = Decimal.minus(player.light,lightUpgradeCosts[x])
+    player.lightUpgrades[x] = true
+}

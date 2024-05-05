@@ -1,0 +1,202 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>rgb game</title>
+</head>
+
+<body>
+    <div id="app">
+        <div id="nav-bar">
+            <div class="nav-item" onclick="changeMenu('main')">
+                Main
+            </div>
+            <div class="nav-item" onclick="changeMenu('light')">
+                Light
+            </div>
+        </div>
+        <div id="middle">
+            <div class="menu" id="main-menu">
+                <div id="rgb-container">
+                    <div id="hexcode">
+                        #000000
+                    </div>
+                    <div id="square" onmouseover="squareHovered = true" onmouseleave="squareHovered = false">
+                    </div>
+                    <div id="red-green-blue">
+                        <div class="rgb-colour" id="red">
+                            0
+                        </div>
+                        <div class="rgb-colour" id="green">
+                            0
+                        </div>
+                        <div class="rgb-colour" id="blue">
+                            0
+                        </div>
+                    </div>
+                </div>
+                <div class="rgb-upgrade-panel hidden" id="rgb-min-panel">
+                    <div class="panel-title">
+                        Min Roll
+                    </div>
+                    <div>
+                        Costs <span id="rgb-min-cost">1000000</span>
+                    </div>
+                    <div class="upgrade-row">
+                        <div class="rgb-button red-button" onclick="upgradeRGBMin(0)">
+                            <span id="rgb-min-0">000</span><br>
+                        </div>
+                        <div class="rgb-button green-button" onclick="upgradeRGBMin(1)">
+                            <span id="rgb-min-1">000</span><br>
+                        </div>
+                        <div class="rgb-button blue-button" onclick="upgradeRGBMin(2)">
+                            <span id="rgb-min-2">000</span><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="rgb-upgrade-panel">
+                    <div class="panel-title">
+                        Max Roll
+                    </div>
+                    <div>
+                        Costs <span id="rgb-max-cost">100</span>
+                    </div>
+                    <div class="upgrade-row">
+                        <div class="rgb-button red-button" onclick="upgradeRGBMax(0)">
+                            <span id="rgb-max-0">001</span><br>
+                        </div>
+                        <div class="rgb-button green-button" onclick="upgradeRGBMax(1)">
+                            <span id="rgb-max-1">001</span><br>
+                        </div>
+                        <div class="rgb-button blue-button" onclick="upgradeRGBMax(2)">
+                            <span id="rgb-max-2">001</span><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="rgb-upgrade-panel">
+                    <div class="panel-title">
+                        Colour Multiplier
+                    </div>
+                    <div>
+                        Costs <span id="colour-mult-cost">1000</span>
+                    </div>
+                    <div class="upgrade-row">
+                        <div class="rgb-button red-button" onclick="upgradeColourMulti(0)">
+                            <span id="colour-mult-0">1</span>x<br>
+                        </div>
+                        <div class="rgb-button green-button" onclick="upgradeColourMulti(1)">
+                            <span id="colour-mult-1">1</span>x<br>
+                        </div>
+                        <div class="rgb-button blue-button" onclick="upgradeColourMulti(2)">
+                            <span id="colour-mult-2">1</span>x<br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu hidden" id="light-menu">
+                <div class="title-row">
+                    Upgrades
+                </div>
+                <div class="button-row">
+                    
+                    <div class="button light-button" id="light-upgrade-0" onclick="buyLightUpgrade(0)">
+                        <div>Total light boosts points<br>
+                        Currently <span id="light-upgrade-stat-0">2</span>x<br>
+                        Costs <span id="light-upgrade-cost-0">1</span> light</div>
+                    </div>
+                    <div class="button light-button" id="light-upgrade-1" onclick="buyLightUpgrade(1)">
+                        <div>Double the speed of rolling<br>
+                        Costs <span id="light-upgrade-cost-1">3</span> light</div>
+                    </div>
+                    <div class="button light-button" id="light-upgrade-2" onclick="buyLightUpgrade(2)">
+                        <div>Make upgrade cost scaling 5% better<br>
+                        Costs <span id="light-upgrade-cost-2">10</span> light</div>
+                    </div>
+                    
+                </div>
+                <div class="button-row">
+                    <div class="button light-button" id="light-upgrade-3" onclick="buyLightUpgrade(3)">
+                        <div>Straight up just like... 4x points<br>
+                        Costs <span id="light-upgrade-cost-3">100</span> light</div>
+                    </div>
+                    <div class="button light-button" id="light-upgrade-4" onclick="buyLightUpgrade(4)">
+                        <div>Unlock photon emitters<br>
+                        Costs <span id="light-upgrade-cost-4">1000</span> light</div>
+                    </div>
+                </div>
+                    
+                <div class="title-row">
+                    Milestones
+                </div>
+                <div class="milestones-column">
+                    <div class="milestone light-milestone" id="light-milestone-0">
+                        <div class="milestone-title">
+                            <span id="light-milestone-req-0">1</span> Total Light
+                        </div>
+                        <div class="milestone-content">
+                            Get a new "Min Roll" upgrade.
+                        </div>
+                    </div>
+                    <div class="milestone light-milestone" id="light-milestone-1">
+                        <div class="milestone-title">
+                            <span id="light-milestone-req-1">5</span> Total Light
+                        </div>
+                        <div class="milestone-content">
+                            Get the value of your lowest possible roll every second.
+                        </div>
+                    </div>
+                    <div class="milestone light-milestone" id="light-milestone-2">
+                        <div class="milestone-title">
+                            <span id="light-milestone-req-2">75</span> Total Light
+                        </div>
+                        <div class="milestone-content">
+                            Start with 10,000 points on reset.
+                        </div>
+                    </div>
+                    <div class="milestone light-milestone" id="light-milestone-3">
+                        <div class="milestone-title">
+                            <span id="light-milestone-req-3">2500</span> Total Light
+                        </div>
+                        <div class="milestone-content">
+                            Unlock light reset automation.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="currencies">
+            <div class="currency" id="points-container">
+                <div class="currency-title">
+                    Points
+                </div>
+                <div class="currency-value" id="points">
+                    0
+                </div>
+            </div>
+            <div class="currency clickable" id="light-container" onclick="lightReset()">
+                <div class="currency-title">
+                    Light
+                </div>
+                <div class="currency-value" id="light">
+                    (+0) 0
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bemin.js"></script>
+    <script src="js/notation.js"></script>
+    <script src="js/save.js"></script>
+    <script src="js/rgb.js"></script>
+    <script src="js/light.js"></script>
+    <script src="js/update.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/nav.js"></script>
+    <script>
+        load();
+    </script>
+</body>
+
+</html>
