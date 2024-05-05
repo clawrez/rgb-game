@@ -469,11 +469,6 @@ function versionCheck() {
 	}
 }
 
-var saveInterval = setInterval(function() {
-	if (player===undefined || allSaves===undefined) return;
-	if (gameEnded&&!player.keepGoing) return;
-	if (player.autosave) save();
-}, 5000)
 
 // ************ Themes ************
 
@@ -995,21 +990,6 @@ function layOver(obj1, obj2) {
 
 var minusHeld = false;
 
-document.onkeydown = function(e) {
-	if (player===undefined) return;
-	if (gameEnded&&!player.keepGoing) return;
-	let ctrlDown = e.ctrlKey
-	let key = e.key
-	tmp.nerdMode = player.tapNerd?((e.key=="-"&&!minusHeld) ? !tmp.nerdMode : tmp.nerdMode):(e.key=="-")
-	if (e.shiftKey) minusHeld = true;
-	if (ctrlDown) key = "ctrl+" + key
-	if (onFocused) return
-	if (ctrlDown && hotkeys[key]) e.preventDefault()
-	if(hotkeys[key]){
-		if (player[hotkeys[key].layer].unlocked)
-			hotkeys[key].onPress()
-	}
-}
 
 document.onkeyup = function(e) {
 	if (e.key=="-" && !player.tapNerd) tmp.nerdMode = false;
@@ -1069,5 +1049,3 @@ function prestigeButtonText(layer)
 function isFunction(obj) {
 	return !!(obj && obj.constructor && obj.call && obj.apply);
   };
-  
-document.title = modInfo.name
