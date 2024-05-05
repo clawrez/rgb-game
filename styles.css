@@ -370,6 +370,11 @@ body {
     font-size: 14px;
 }
 
+.light-milestone.milestone-earned {
+    background-color: white;
+    color: black;
+}
+
 .hidden {
     display: none !important;
 }

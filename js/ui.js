@@ -14,6 +14,8 @@ let hexCodeValue = document.getElementById("hexcode")
 
 let square = document.getElementById("square")
 
+let rgbMinUpgradePanel = document.getElementById("rgb-min-panel")
+
 let rgbMinUpgrade0 = document.getElementById("rgb-min-0")
 let rgbMinUpgrade1 = document.getElementById("rgb-min-1")
 let rgbMinUpgrade2 = document.getElementById("rgb-min-2")
@@ -70,19 +72,20 @@ let lightMilestoneReqsUI = [
     document.getElementById("light-milestone-req-3"),
 ]
 
+
 function updateCurrency(c) {
     switch (c) {
         case 'points':
             pointsContainer.classList.add("add-to-currency");
             setTimeout(() => {
                 pointsContainer.classList.remove("add-to-currency");
-              }, 100);
+            }, 100);
             break;
         case 'light':
             lightContainer.classList.add("add-to-currency");
             setTimeout(() => {
-            lightContainer.classList.remove("add-to-currency");
-              }, 100);
+                lightContainer.classList.remove("add-to-currency");
+            }, 100);
             break;
         default:
             console.log(`bleh`);
@@ -124,21 +127,35 @@ function updateUI() {
     colourMultUpgradeCost.textContent = formatWhole(player.colourMultiCost)
 
 
-    for(let i = 0;i < lightUpgradesUI.length;i++){
-        lightUpgradeCostsUI[i].textContent = formatWhole(lightUpgradeCosts[i])    
+    for (let i = 0; i < lightUpgradesUI.length; i++) {
+        lightUpgradeCostsUI[i].textContent = formatWhole(lightUpgradeCosts[i])
     }
 
-    for(let i = 0;i < lightMilestonesUI.length;i++){
-        lightMilestoneReqsUI[i].textContent = formatWhole(lightMilestoneReqs[i])    
+    for (let i = 0; i < lightMilestonesUI.length; i++) {
+        lightMilestoneReqsUI[i].textContent = formatWhole(lightMilestoneReqs[i])
     }
 
-    for(let i = 0;i < lightUpgradesUI.length; i++){
-        if(player.lightUpgrades[i]){
+    for (let i = 0; i < lightMilestonesUI.length; i++) {
+        if (player.lightMilestones[i]) {
+            lightMilestonesUI[i].classList.add("milestone-earned")
+        } else {
+            lightMilestonesUI[i].classList.remove("milestone-earned")
+        }
+    }
+
+    for (let i = 0; i < lightUpgradesUI.length; i++) {
+        if (player.lightUpgrades[i]) {
             lightUpgradesUI[i].classList.add("bought")
         } else {
             lightUpgradesUI[i].classList.remove("bought")
 
         }
-        
+
+    }
+
+    if (player.lightMilestones[0]){
+        rgbMinUpgradePanel.classList.remove("hidden")
+    } else {
+        rgbMinUpgradePanel.classList.add("hidden")
     }
 }

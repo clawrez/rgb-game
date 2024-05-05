@@ -5,7 +5,6 @@ function changeMenu(menu) {
         menu.classList.add("hidden")
     })
     document.getElementById(menu + "-menu").classList.remove("hidden")
-    console.log(menu)
 }
 
 function changeSubMenu(menu,sub) {
