@@ -240,7 +240,6 @@ a {
     flex-direction: column;
     justify-content: center;
     cursor: pointer;
-
 }
 
 .button:hover {
@@ -338,7 +337,7 @@ a {
 .light-button {
     color: white;
     border-color: white;
-    height: 60px;
+    height: 58px;
 }
 
 /* .light-upgrades {
