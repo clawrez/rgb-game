@@ -16,6 +16,9 @@
             <div class="nav-item" onclick="changeMenu('light')">
                 Light
             </div>
+            <div class="nav-item" onclick="changeMenu('options')">
+                Options
+            </div>
         </div>
         <div id="middle">
             <div class="menu" id="main-menu">
@@ -100,33 +103,33 @@
                     Upgrades
                 </div>
                 <div class="button-row">
-                    
+
                     <div class="button light-button" id="light-upgrade-0" onclick="buyLightUpgrade(0)">
                         <div>Total light boosts points<br>
-                        Currently <span id="light-upgrade-stat-0">2</span>x<br>
-                        Costs <span id="light-upgrade-cost-0">1</span> light</div>
+                            Currently <span id="light-upgrade-stat-0">2</span>x<br>
+                            Costs <span id="light-upgrade-cost-0">1</span> light</div>
                     </div>
                     <div class="button light-button" id="light-upgrade-1" onclick="buyLightUpgrade(1)">
                         <div>Double the speed of rolling<br>
-                        Costs <span id="light-upgrade-cost-1">3</span> light</div>
+                            Costs <span id="light-upgrade-cost-1">3</span> light</div>
                     </div>
                     <div class="button light-button" id="light-upgrade-2" onclick="buyLightUpgrade(2)">
                         <div>Make upgrade cost scaling 5% better<br>
-                        Costs <span id="light-upgrade-cost-2">10</span> light</div>
+                            Costs <span id="light-upgrade-cost-2">10</span> light</div>
                     </div>
-                    
+
                 </div>
                 <div class="button-row">
                     <div class="button light-button" id="light-upgrade-3" onclick="buyLightUpgrade(3)">
                         <div>Straight up just like... 4x points<br>
-                        Costs <span id="light-upgrade-cost-3">100</span> light</div>
+                            Costs <span id="light-upgrade-cost-3">100</span> light</div>
                     </div>
                     <div class="button light-button" id="light-upgrade-4" onclick="buyLightUpgrade(4)">
                         <div>Unlock photon emitters<br>
-                        Costs <span id="light-upgrade-cost-4">1000</span> light</div>
+                            Costs <span id="light-upgrade-cost-4">1000</span> light</div>
                     </div>
                 </div>
-                    
+
                 <div class="title-row">
                     Milestones
                 </div>
@@ -164,6 +167,57 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="menu hidden" id="options-menu">
+                <div class="title-row">
+                    Saving
+                </div>
+                <div class="button-row">
+                    <div class="button" id="manual-save-button">
+                        Save Manually
+                    </div>
+                    <div class="button" id="autosave-button">
+                        Autosave (ON)
+                    </div>
+                </div>
+                <div class="button-row">
+                    <div class="button" id="export-button">
+                        Export Save
+                    </div>
+                    <div class="button" id="import-button">
+                        Import Save
+                    </div>
+                </div>
+
+                <div class="title-row">
+                    Appearance
+                </div>
+                <div class="button-row">
+                    <div class="button" id="manual-save-button">
+                        Select Font
+                    </div>
+                </div>
+                <div class="title-row">
+                    Information
+                </div>
+                <div class="text-row">
+                    Created with ♥️ by Milo<br>
+                    Version INDEV
+                </div>
+                <div class="button-row">
+                    <a href="https://discord.gg/GwvYGnsmtN" target="_blank">
+                    <div class="button" id="discord-button">
+                        Join the Discord
+                    </div>
+                </a>
+                <a href="https://clawrez.gay" target="_blank">
+                    <div class="button" id="discord-button">
+                        Check out my site
+                    </div>
+                </a>
+                </div>
+                
             </div>
         </div>
         <div id="currencies">

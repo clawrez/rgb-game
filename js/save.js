@@ -1,6 +1,11 @@
 function reset() {
     player = {
         lastTick: Date.now(),
+        // Options
+        fontFace: [0],
+        autoSave: true,
+    
+        // Game
         points: new Decimal("0"),
         pointsMulti: new Decimal("1"),
         startingPoints: new Decimal("0"),
