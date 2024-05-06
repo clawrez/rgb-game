@@ -1,5 +1,6 @@
 function reset() {
     player = {
+        lastTick: Date.now(),
         points: new Decimal("0"),
         pointsMulti: new Decimal("1"),
         startingPoints: new Decimal("0"),

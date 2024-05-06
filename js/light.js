@@ -1,7 +1,12 @@
 function lightReset() {
     if(Decimal.lt(player.potentialLight,1))return
     let potL = player.potentialLight
-    player.points = player.startingPoints
+    if(Decimal.gte(Decimal.add(player.totalLight,potL),lightMilestoneReqs[2])){
+        player.points = new Decimal("10000")
+    } else {
+        player.points = player.startingPoints
+    }
+    
     player.totalPoints = player.startingPoints
     player.rgb = [0,0,0]
     player.rgbMin = [0,0,0]
@@ -13,6 +18,7 @@ function lightReset() {
     player.hexCode = "#000000"
     player.light = Decimal.plus(player.light,potL)
     player.totalLight = Decimal.plus(player.totalLight,potL)
+    
 }
 
 function buyLightUpgrade(x) {

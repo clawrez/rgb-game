@@ -97,8 +97,8 @@ setInterval(() => {
 }, 1000 / 30);
 
 function updateUI() {
-    pointsDisplay.textContent = formatWhole(player.points)
-    lightDisplay.textContent = "(+" + formatWhole(player.potentialLight) + ") " + formatWhole(player.light)
+    pointsDisplay.textContent = formatWhole(player.points,true)
+    lightDisplay.textContent = "(+" + formatWhole(player.potentialLight,true) + ") " + formatWhole(player.light)
 
     redNumber.textContent = ("00" + player.rgb[0]).slice(-3)
     greenNumber.textContent = ("00" + player.rgb[1]).slice(-3)

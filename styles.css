@@ -300,6 +300,7 @@ body {
     margin-bottom: 12px;
     margin-top:18px;
     width: 300px;
+    background-image: linear-gradient(to left,#000,#222, #000);
 }
 
 .title-row:first-child {

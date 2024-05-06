@@ -16,6 +16,7 @@ function rollRGB() {
     let bPoints = Decimal.times(Decimal.pow("2",player.colourMulti[2]),Decimal.add(1,player.rgb[2]))
 
     updateCurrency("points")
+    
     player.points = Decimal.add(player.points,Decimal.times(Decimal.times(Decimal.times(rPoints,gPoints),bPoints),player.pointsMulti))
     player.totalPoints = Decimal.add(player.totalPoints,Decimal.times(Decimal.times(Decimal.times(rPoints,gPoints),bPoints),player.pointsMulti))
     convertToHex()
