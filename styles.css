@@ -114,7 +114,7 @@ a {
     justify-content: center;
     margin-left: auto;
     margin-right: 0;
-    width: 170px;
+    width: 250px;
     height: 100vh;
 }
 
@@ -126,7 +126,7 @@ a {
     border-width: 2px 2px 2px 0;
     border-radius: 0 6px 6px 0;
     margin-bottom: 8px;
-    width: 170px;
+    width: 250px;
     transition: 0.1s;
     cursor: pointer;
 
@@ -137,7 +137,7 @@ a {
 }
 
 .nav-item:hover {
-    width: 160px;
+    width: 235px;
     box-shadow: inset 0 0 50px rgb(34, 34, 34);
 }
 
@@ -443,6 +443,65 @@ a {
     background-color: rgb(46, 47, 63);
 }
 
+#reset-save-button {
+    border-color: rgb(255, 48, 48);
+    color: rgb(255, 48, 48);
+}
+
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #0c0c0c;
+    padding: 8px;
+    font-size: 16px;
+    text-align: center;
+    border: 2px solid #222;
+    border-radius: 8px;
+    width: 490px;
+    box-shadow: 0 0 20px black;
+}
+
+.modal-title {
+    font-weight: bold;
+    background-image: linear-gradient(to left, #0c0c0c, #222, #0c0c0c);
+    width: 100%;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+.modal-content {
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.modal-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.modal-button {
+    border: 2px solid #666;
+    border-radius: 6px;
+    padding: 2px;
+    width: 150px;
+    font-size: 13px;
+    text-align: center;
+    margin: 2px;
+    transition: 0.1s;
+}
+
+.modal-button:hover {
+    background-color: #222;
+}
 
 .hidden {
     display: none !important;

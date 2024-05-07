@@ -13,10 +13,10 @@
             <div class="nav-item" onclick="changeMenu('main')">
                 Main
             </div>
-            <div class="nav-item" onclick="changeMenu('light')">
+            <div class="nav-item hidden" id="light-nav" onclick="changeMenu('light')">
                 Light
             </div>
-            <div class="nav-item" onclick="changeMenu('automation')">
+            <div class="nav-item hidden" id="automation-nav" onclick="changeMenu('automation')">
                 Automation
             </div>
             <div class="nav-item" onclick="changeMenu('options')">
@@ -174,7 +174,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="title-row">
                     Photon Emitters
                 </div>
@@ -262,18 +261,18 @@
                     Saving
                 </div>
                 <div class="button-row">
-                    <div class="button" id="manual-save-button">
+                    <div class="button" id="manual-save-button" onclick="save()">
                         Save Manually
                     </div>
-                    <div class="button" id="autosave-button">
-                        Autosave (ON)
+                    <div class="button" id="reset-save-button" onclick="hardReset()">
+                        Reset Save
                     </div>
                 </div>
                 <div class="button-row">
-                    <div class="button" id="export-button">
+                    <div class="button" id="export-button" onclick="exportSave()">
                         Export Save
                     </div>
-                    <div class="button" id="import-button">
+                    <div class="button" id="import-button" onclick="importSave()">
                         Import Save
                     </div>
                 </div>
@@ -325,7 +324,7 @@
                     (+0) 0
                 </div>
             </div>
-            <div class="currency" id="photons-container" onclick="lightReset()">
+            <div class="currency hidden" id="photons-container" onclick="lightReset()">
                 <div class="currency-title">
                     Photons
                 </div>
@@ -335,7 +334,18 @@
             </div>
         </div>
     </div>
-
+    <div class="modal" id="reset-confirmation">
+        <div class="modal-title">
+            Modal Alert
+        </div>
+        <div class="modal-content">
+            This is a modal. Better watch out homes. AAHHHHH wacth out please...
+        </div>
+        <div class="modal-buttons">
+            <div class="modal-button">Cancel</div>
+            <div class="modal-button">OK</div>
+        </div>
+    </div>
     <script src="js/bemin.js"></script>
     <script src="js/notation.js"></script>
     <script src="js/save.js"></script>

@@ -54,3 +54,37 @@ function load(){
     decoded = JSON.parse(atob(loadedSave));
     for (let item in decoded) player[item] = decoded[item]
 }
+
+function importSave(){
+    let importedSave = prompt("Paste your save below.")
+    if (importedSave && importedSave != null && importedSave != "") {
+        localStorage.setItem(saveItemName, importedSave);
+            location.reload()
+      }
+      else {
+        alert("Not a valid save.")
+      }
+}
+
+function hardReset() {
+    if (confirm("Are you SURE you want to COMPLETELY RESET your save?")) {
+        if (confirm("Like... /srs fr..???")) {
+            reset()
+            save()
+            location.reload()
+        }
+    }
+}
+
+function exportSave(){
+    save()
+    navigator.clipboard.writeText(btoa(JSON.stringify(player))).then(function() {
+        alert("Save exported to clipboard successfully.")
+    }, function() {
+        alert("Error exporting to clipboard.")
+  });
+}
+
+setInterval(function(){ // auto save
+    save();
+}, 15000);
