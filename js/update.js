@@ -8,6 +8,7 @@ setInterval(() => {
 
     player.lowestRoll = Decimal.times(Decimal.times(Decimal.times(rPoints,gPoints),bPoints),player.pointsMulti)
 
+    player.pointsMulti = player.pointMultis.reduce( (a, b) => Decimal.times(a,b) )
     // Light
     player.potentialLight = Decimal.floor(Decimal.pow(Decimal.divide(player.totalPoints, "1e9"), "0.5"))
 
@@ -24,5 +25,28 @@ setInterval(() => {
     }
     if (player.lightMilestones[2]) {
         player.startingPoints = new Decimal("10000")
+    }
+
+    // Light Upgrades
+    if (player.lightUpgrades[0]){
+        player.pointMultis[0] = Decimal.add("1",Decimal.log2(Decimal.add("1",player.totalLight)))
+    } else {
+        player.pointMultis[0] = new Decimal("1")
+    }
+    if (player.lightUpgrades[1] && rollDoubled == false){
+        rollDoubled = true;
+        clearInterval(rgbRoll)
+        rgbRoll = setInterval(() => {
+            if(squareHovered) {rollRGB()}
+        }, 1000/12);
+    }
+    if (player.lightUpgrades[2]){
+        player.rgbCostScaling = new Decimal("0.95")
+    } else {
+        player.rgbCostScaling = new Decimal("1")
+    } if(player.lightUpgrades[3]){
+        player.pointMultis[1] = new Decimal("4")
+    } else {
+        player.pointMultis[1] = new Decimal("1")
     }
 }, 1000 / 30);

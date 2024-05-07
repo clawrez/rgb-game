@@ -8,6 +8,7 @@ function reset() {
         // Game
         points: new Decimal("0"),
         pointsMulti: new Decimal("1"),
+        pointMultis: [new Decimal("1"),new Decimal("1"),],
         startingPoints: new Decimal("0"),
         totalPoints: new Decimal("0"),
         rgb: [
@@ -32,13 +33,12 @@ function reset() {
         potentialLight: new Decimal("0"),
         lightUpgrades: [],
         lightMilestones: [],
+        photons: new Decimal("0"),
     }
 }
 
-let rollInterval = 1000/6
-
-const lightUpgradeCosts = [1, 3, 10, 100, 1000]
-const lightMilestoneReqs = [1, 5, 75, 5000]
+const lightUpgradeCosts = [1, 3, 10, 100, 1000, 500000]
+const lightMilestoneReqs = [1, 5, 75, 25000]
 
 
 var saveItemName = "rgb save";

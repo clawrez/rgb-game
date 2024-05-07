@@ -131,12 +131,16 @@
                         <div>Unlock photon emitters<br>
                             Costs <span id="light-upgrade-cost-4">1000</span> light</div>
                     </div>
+                    <div class="button light-button" id="light-upgrade-5" onclick="buyLightUpgrade(5)">
+                        <div>Unlock multi-buying of upgrades<br>
+                            Costs <span id="light-upgrade-cost-5">500000</span> light</div>
+                    </div>
                 </div>
 
                 <div class="title-row">
                     Milestones
                 </div>
-                <div class="milestones-column">
+                <div class="panel milestones-column">
                     <div class="milestone light-milestone" id="light-milestone-0">
                         <div class="milestone-title">
                             <span id="light-milestone-req-0">1</span> Total Light
@@ -163,22 +167,92 @@
                     </div>
                     <div class="milestone light-milestone" id="light-milestone-3">
                         <div class="milestone-title">
-                            <span id="light-milestone-req-3">2500</span> Total Light
+                            <span id="light-milestone-req-3">25000</span> Total Light
                         </div>
                         <div class="milestone-content">
                             Unlock light reset automation.
                         </div>
                     </div>
                 </div>
+
+                <div class="title-row">
+                    Photon Emitters
+                </div>
+                <div class="text-row">
+                    Photons are boosting light gain by <span id="photon-boost-stat">1</span>x.
+                </div>
+                <div class="photon-emitter" id="emitter-0">
+                    <div class="emitter-content emitter-title">
+                        Alpha
+                    </div>
+                    <div class="emitter-content emitter-multi" id="emitter-multi-0">
+                        1x
+                    </div>
+                    <div class="emitter-content emitter-quantity" id="emitter-quantity-0">
+                        0
+                    </div>
+                    <div class="emitter-content emitter-buy" id="emitter-buy-0" onclick="buyPhotonEmitter(0)">
+                        Costs 500 light
+                    </div>
+                </div>
+                <div class="photon-emitter" id="emitter-1">
+                    <div class="emitter-content emitter-title">
+                        Beta
+                    </div>
+                    <div class="emitter-content emitter-multi" id="emitter-multi-1">
+                        1x
+                    </div>
+                    <div class="emitter-content emitter-quantity" id="emitter-quantity-1">
+                        0
+                    </div>
+                    <div class="emitter-content emitter-buy" id="emitter-buy-1" onclick="buyPhotonEmitter(1)">
+                        Costs 5,000,000 light
+                    </div>
+                </div>
+                <div class="photon-emitter" id="emitter-2">
+                    <div class="emitter-content emitter-title">
+                        Gamma
+                    </div>
+                    <div class="emitter-content emitter-multi" id="emitter-multi-2">
+                        1x
+                    </div>
+                    <div class="emitter-content emitter-quantity" id="emitter-quantity-2">
+                        0
+                    </div>
+                    <div class="emitter-content emitter-buy" id="emitter-buy-2" onclick="buyPhotonEmitter(2)">
+                        Costs 5.00e10 light
+                    </div>
+                </div>
+                <div class="photon-emitter" id="emitter-3">
+                    <div class="emitter-content emitter-title">
+                        Delta
+                    </div>
+                    <div class="emitter-content emitter-multi" id="emitter-multi-3">
+                        1x
+                    </div>
+                    <div class="emitter-content emitter-quantity" id="emitter-quantity-3">
+                        0
+                    </div>
+                    <div class="emitter-content emitter-buy" id="emitter-buy-3" onclick="buyPhotonEmitter(3)">
+                        Costs 5.00e14 light
+                    </div>
+                </div>
             </div>
 
             <div class="menu hidden" id="automation-menu">
-                <div class="automation-panel">
-                    <div class="button">
-
+                <div class="panel automation-panel">
+                    <div class="automation-left">
+                        <div class="automation-title">
+                            Light Reset
+                        </div>
                     </div>
-                    <div>
-                        <input type="number" class="automation-interval">
+                    <div class="automation-left">
+                        <div class="button">
+                            Disabled
+                        </div>
+                        <div>
+                            <input type="number" class="automation-interval" value="">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -221,17 +295,17 @@
                 </div>
                 <div class="button-row">
                     <a href="https://discord.gg/GwvYGnsmtN" target="_blank">
-                    <div class="button" id="discord-button">
-                        Join the Discord
-                    </div>
-                </a>
-                <a href="https://clawrez.gay" target="_blank">
-                    <div class="button" id="discord-button">
-                        Check out my site
-                    </div>
-                </a>
+                        <div class="button" id="discord-button">
+                            Join the Discord
+                        </div>
+                    </a>
+                    <a href="https://clawrez.gay" target="_blank">
+                        <div class="button" id="discord-button">
+                            Check out my site
+                        </div>
+                    </a>
                 </div>
-                
+
             </div>
         </div>
         <div id="currencies">
@@ -249,6 +323,14 @@
                 </div>
                 <div class="currency-value" id="light">
                     (+0) 0
+                </div>
+            </div>
+            <div class="currency" id="photons-container" onclick="lightReset()">
+                <div class="currency-title">
+                    Photons
+                </div>
+                <div class="currency-value" id="photons">
+                    0
                 </div>
             </div>
         </div>

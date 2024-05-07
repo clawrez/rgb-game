@@ -1,9 +1,11 @@
 let pointsContainer = document.getElementById("points-container")
 let lightContainer = document.getElementById("light-container")
+let photonsContainer = document.getElementById("photons-container")
 
 
 let pointsDisplay = document.getElementById("points")
 let lightDisplay = document.getElementById("light")
+let photonsDisplay = document.getElementById("photons")
 
 
 let redNumber = document.getElementById("red")
@@ -40,10 +42,12 @@ let lightUpgradesUI = [
     document.getElementById("light-upgrade-2"),
     document.getElementById("light-upgrade-3"),
     document.getElementById("light-upgrade-4"),
+    document.getElementById("light-upgrade-5"),
 ]
 
 let lightUpgradeStatsUI = [
     document.getElementById("light-upgrade-stat-0"),
+    null,
     null,
     null,
     null,
@@ -56,6 +60,7 @@ let lightUpgradeCostsUI = [
     document.getElementById("light-upgrade-cost-2"),
     document.getElementById("light-upgrade-cost-3"),
     document.getElementById("light-upgrade-cost-4"),
+    document.getElementById("light-upgrade-cost-5"),
 ]
 
 let lightMilestonesUI = [
@@ -87,6 +92,12 @@ function updateCurrency(c) {
                 lightContainer.classList.remove("add-to-currency");
             }, 100);
             break;
+        case 'photons':
+            photonsContainer.classList.add("add-to-currency");
+            setTimeout(() => {
+                photonsContainer.classList.remove("add-to-currency");
+            }, 100);
+            break;
         default:
             console.log(`bleh`);
     }
@@ -97,8 +108,9 @@ setInterval(() => {
 }, 1000 / 30);
 
 function updateUI() {
-    pointsDisplay.textContent = formatWhole(player.points,true)
-    lightDisplay.textContent = "(+" + formatWhole(player.potentialLight,true) + ") " + formatWhole(player.light)
+    pointsDisplay.textContent = formatWhole(player.points, true)
+    lightDisplay.textContent = "(+" + formatWhole(player.potentialLight, true) + ") " + formatWhole(player.light)
+    photonsDisplay.textContent = formatWhole(player.photons, true)
 
     redNumber.textContent = ("00" + player.rgb[0]).slice(-3)
     greenNumber.textContent = ("00" + player.rgb[1]).slice(-3)
@@ -153,7 +165,9 @@ function updateUI() {
 
     }
 
-    if (player.lightMilestones[0]){
+    lightUpgradeStatsUI[0].textContent = format(Decimal.add("1", Decimal.log2(Decimal.add("1", player.totalLight))), 1)
+
+    if (player.lightMilestones[0]) {
         rgbMinUpgradePanel.classList.remove("hidden")
     } else {
         rgbMinUpgradePanel.classList.add("hidden")

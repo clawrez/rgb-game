@@ -1,8 +1,10 @@
 let squareHovered = false
 
+let rollDoubled = false
+
 let rgbRoll = setInterval(() => {
     if(squareHovered) {rollRGB()}
-}, rollInterval);
+}, 1000/6);
 
 
 
