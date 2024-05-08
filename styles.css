@@ -402,6 +402,13 @@ a {
     border-radius: 8px;
 }
 
+#photon-emitter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 18px;
+}
+
 .photon-emitter {
     display: flex;
     align-items: center;

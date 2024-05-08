@@ -7,6 +7,7 @@ let pointsDisplay = document.getElementById("points")
 let lightDisplay = document.getElementById("light")
 let photonsDisplay = document.getElementById("photons")
 
+let lightNav = document.getElementById("light-nav")
 
 let redNumber = document.getElementById("red")
 let greenNumber = document.getElementById("green")
@@ -171,5 +172,9 @@ function updateUI() {
         rgbMinUpgradePanel.classList.remove("hidden")
     } else {
         rgbMinUpgradePanel.classList.add("hidden")
+    }
+
+    if(player.unlockedLight){
+        lightNav.classList.remove("hidden")
     }
 }

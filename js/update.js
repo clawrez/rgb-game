@@ -10,7 +10,7 @@ setInterval(() => {
 
     player.pointsMulti = player.pointMultis.reduce( (a, b) => Decimal.times(a,b) )
     // Light
-    player.potentialLight = Decimal.floor(Decimal.pow(Decimal.divide(player.totalPoints, "1e9"), "0.5"))
+    player.potentialLight = Decimal.floor(Decimal.pow(Decimal.divide(player.totalPoints, "1e9"), "0.33"))
 
     // Light Milestones
     for (let i = 0; i < lightMilestoneReqs.length; i++) {
