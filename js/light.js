@@ -1,8 +1,8 @@
 function lightReset() {
+    if(Decimal.lt(player.potentialLight,1))return
     if(player.unlockedLight == false){
         player.unlockedLight = true
     }
-    if(Decimal.lt(player.potentialLight,1))return
     let potL = player.potentialLight
     if(Decimal.gte(Decimal.add(player.totalLight,potL),lightMilestoneReqs[2])){
         player.points = new Decimal("1000000")
