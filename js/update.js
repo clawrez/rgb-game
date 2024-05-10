@@ -26,7 +26,7 @@ setInterval(() => {
 
     }
     if (player.lightMilestones[2]) {
-        player.startingPoints = new Decimal("10000")
+        player.startingPoints = new Decimal("1000000")
     }
 
     // Light Upgrades
@@ -51,7 +51,7 @@ setInterval(() => {
     } else {
         player.pointMultis[1] = new Decimal("1")
     }
-    if(player.lightUpgrades[3]){
+    if(player.lightUpgrades[4]){
         player.unlockedFidgetToys = true
     }
 

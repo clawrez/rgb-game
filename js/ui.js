@@ -204,5 +204,13 @@ function updateUI() {
         fidgetToysNav.classList.remove("hidden")
     }
 
+    if(player.lightMilestones[3]){
+        let buyMaxes = document.querySelectorAll(".max-row")
+
+        buyMaxes.forEach(buyM => {
+            buyM.classList.remove("hidden")
+        })
+    }
+
     colourClickerTimeDisplay.textContent = ('0' + (Math.floor(player.colourClickerTime / 60)) % 60).slice(-2) + ":" + ('0' + Math.floor(player.colourClickerTime) % 60).slice(-2)
 }
