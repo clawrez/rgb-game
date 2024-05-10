@@ -1,4 +1,4 @@
-const colourClickerSound = new Tone.Player("../sounds/colourClickerClick.mp3").toDestination()
+const colourClickerSound = new Tone.Player("https://clawrez.gay/sounds/colourClickerClick.mp3").toDestination()
 const colourClickers = [
     document.getElementById("colour-clicker-0"),
     document.getElementById("colour-clicker-1"),
