@@ -6,11 +6,13 @@ function lightReset() {
     let potL = player.potentialLight
     if(Decimal.gte(Decimal.add(player.totalLight,potL),lightMilestoneReqs[2])){
         player.points = new Decimal("1000000")
+        player.totalPoints = new Decimal("1000000")
     } else {
         player.points = player.startingPoints
+        player.totalPoints = player.startingPoints
     }
     
-    player.totalPoints = player.startingPoints
+    
     player.rgb = [0,0,0]
     player.rgbMin = [0,0,0]
     player.rgbMinCost = new Decimal("1e6")
