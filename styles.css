@@ -58,6 +58,7 @@ a {
 
 .currency {
     padding: 8px;
+    position: relative;
     text-align: center;
     text-align: right;
     background-image: linear-gradient(to right, #111, #050505);
@@ -73,8 +74,32 @@ a {
     margin-bottom: 0;
 }
 
+.currency-tooltip {
+    display: block;
+    opacity: 0%;
+    width: 250px;
+    font-size: 13px;
+    position: absolute;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 2px solid #222;
+    border-radius: 6px;
+    color: #bbb;
+    text-shadow: none;
+    padding: 5px;
+    top: 0%;
+    left: -55%;
+    transform: translateX(-50%)scaleY(80%);
+    pointer-events: none;
+    transition: 0.15s;
+}
+
+.currency:hover .currency-tooltip {
+    opacity: 100%;
+    transform: translateX(-50%)scaleY(100%);
+}
+
 .clickable:hover {
-    width: 235px;
     box-shadow: inset 0 0 50px rgb(34, 34, 34);
 }
 

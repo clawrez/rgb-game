@@ -7,6 +7,10 @@ let pointsDisplay = document.getElementById("points")
 let lightDisplay = document.getElementById("light")
 let photonsDisplay = document.getElementById("photons")
 
+let pointsTooltip = document.getElementById("points-tooltip")
+let lightTooltip = document.getElementById("light-tooltip")
+let photonsTooltip = document.getElementById("photons-tooltip")
+
 let lightNav = document.getElementById("light-nav")
 
 let redNumber = document.getElementById("red")
@@ -112,6 +116,11 @@ function updateUI() {
     pointsDisplay.textContent = formatWhole(player.points, true)
     lightDisplay.textContent = "(+" + formatWhole(player.potentialLight, true) + ") " + formatWhole(player.light)
     photonsDisplay.textContent = formatWhole(player.photons, true)
+
+    pointsTooltip.textContent = formatWhole(player.totalPoints, true)
+    lightTooltip.textContent = formatWhole(player.totalLight, true)
+    photonsTooltip.textContent = formatWhole(player.totalPhotons, true)
+
 
     redNumber.textContent = ("00" + player.rgb[0]).slice(-3)
     greenNumber.textContent = ("00" + player.rgb[1]).slice(-3)

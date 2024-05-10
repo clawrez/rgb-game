@@ -22,6 +22,8 @@ setInterval(() => {
     // Light Milestone Rewards
     if (player.lightMilestones[1]) {
         player.points = Decimal.add(player.points,Decimal.times(player.lowestRoll,dt))
+        player.totalPoints = Decimal.add(player.totalPoints,Decimal.times(player.lowestRoll,dt))
+
     }
     if (player.lightMilestones[2]) {
         player.startingPoints = new Decimal("10000")

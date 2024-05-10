@@ -35,6 +35,7 @@ function reset() {
         lightUpgrades: [],
         lightMilestones: [],
         photons: new Decimal("0"),
+        totalPhotons: new Decimal("0"),
     }
 }
 
