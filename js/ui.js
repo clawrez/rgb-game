@@ -12,6 +12,7 @@ let lightTooltip = document.getElementById("light-tooltip")
 let photonsTooltip = document.getElementById("photons-tooltip")
 
 let lightNav = document.getElementById("light-nav")
+let fidgetToysNav = document.getElementById("fidget-toys-nav")
 
 let redNumber = document.getElementById("red")
 let greenNumber = document.getElementById("green")
@@ -83,6 +84,9 @@ let lightMilestoneReqsUI = [
 ]
 
 let lessFlashButton = document.getElementById("less-flash-button")
+
+let colourClickerTimeDisplay = document.getElementById("colour-clicker-time")
+
 
 function updateCurrency(c) {
     switch (c) {
@@ -195,4 +199,10 @@ function updateUI() {
     if(player.unlockedLight){
         lightNav.classList.remove("hidden")
     }
+
+    if(player.unlockedFidgetToys){
+        fidgetToysNav.classList.remove("hidden")
+    }
+
+    colourClickerTimeDisplay.textContent = ('0' + (Math.floor(player.colourClickerTime / 60)) % 60).slice(-2) + ":" + ('0' + Math.floor(player.colourClickerTime) % 60).slice(-2)
 }

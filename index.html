@@ -17,7 +17,7 @@
                 Light
             </div>
             <div class="nav-item hidden" id="fidget-toys-nav" onclick="changeMenu('fidget-toys')">
-                Fidget Toys :3
+                Fidget Toys
             </div>
             <div class="nav-item hidden" id="automation-nav" onclick="changeMenu('automation')">
                 Automation
@@ -260,6 +260,28 @@
                 </div>
             </div>
 
+            <div class="menu hidden" id="fidget-toys-menu">
+                <div class="panel fidget-toy-panel">
+                    <div class="fidget-toy-title">
+                        Colour Clicker
+                    </div>
+                    <div class="colour-clickers-container">
+                        <div class="colour-clicker" id="colour-clicker-0" onmousedown="colourClickerToy(0)">
+
+                        </div>
+                        <div class="colour-clicker" id="colour-clicker-1" onmousedown="colourClickerToy(1)">
+                            
+                        </div>
+                        <div class="colour-clicker" id="colour-clicker-2" onmousedown="colourClickerToy(2)">
+                            
+                        </div>
+                    </div>
+                    <div class="fidget-toy-info">
+                        3x points for <span id="colour-clicker-time">0:00</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="menu hidden" id="automation-menu">
                 <div class="panel automation-panel">
                     <div class="automation-left">
@@ -309,6 +331,12 @@
                     <div class="button" id="less-flash-button" onclick="lessFlash()">
                         Reduce Flashing Colours
                     </div>
+                </div>
+                <div class="title-row">
+                    Sound
+                </div>
+                <div class="button-row">
+                    <input type="range" id="volume-slider" min="-50" max="0">
                 </div>
                 <div class="title-row">
                     Information
@@ -384,6 +412,7 @@
         </div>
     </div>
     <script src="js/bemin.js"></script>
+    <script src="js/Tone.js"></script>
     <script src="js/notation.js"></script>
     <script src="js/save.js"></script>
     <script src="js/rgb.js"></script>
@@ -392,9 +421,12 @@
     <script src="js/ui.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/options.js"></script>
+    <script src="js/fidgetToys.js"></script>
+    
 
     <script>
         load();
+        volumeSlider.value = player.soundsVolume;
     </script>
 </body>
 

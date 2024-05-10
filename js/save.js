@@ -4,7 +4,13 @@ function reset() {
         // Options
         fontFace: [0],
         autoSave: true,
+        soundsVolume: -35,
         lessFlash: false,
+        // Unlocks
+        unlockedLight: false,
+        unlockedFidgetToys: false,
+        // Fidgets
+        colourClickerTime: 0,
         // Game
         points: new Decimal("0"),
         pointsMulti: new Decimal("1"),
@@ -28,7 +34,7 @@ function reset() {
         colourMultiCost: new Decimal("1000"),
         rgbCostScaling: new Decimal("1"),
         hexcode: "#000000",
-        unlockedLight: false,
+        
         light: new Decimal("0"),
         totalLight: new Decimal("0"),
         potentialLight: new Decimal("0"),
@@ -36,10 +42,11 @@ function reset() {
         lightMilestones: [],
         photons: new Decimal("0"),
         totalPhotons: new Decimal("0"),
+        
     }
 }
 
-const lightUpgradeCosts = [new Decimal("1"), new Decimal("71"), new Decimal("150"), new Decimal("1000"), new Decimal("8500"), new Decimal("1e6")]
+const lightUpgradeCosts = [new Decimal("1"), new Decimal("71"), new Decimal("150"), new Decimal("1000"), new Decimal("8500"), new Decimal("20000")]
 const lightMilestoneReqs = [new Decimal("1"), new Decimal("15"), new Decimal("325"), new Decimal("5000")]
 
 

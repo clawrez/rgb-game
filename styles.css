@@ -505,6 +505,48 @@ a {
     color: rgb(255, 48, 48);
 }
 
+.fidget-toy-panel {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+
+}
+
+.fidget-toy-title {
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.fidget-toy-info {
+    font-size: 14px;
+    margin-top: 8px;
+    color: #666;
+}
+
+.colour-clickers-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.colour-clicker {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(17, 17, 17);
+    border-radius: 6px;
+    border: 2px solid #333;
+    margin-left: 4px;
+    margin-right: 4px;
+    transition: 0.1s;
+}
+
+.colour-clicker:hover {
+    transform: scale(106%);
+}
+
+.colour-clicker:active {
+    transform: scale(99%);
+}
 
 .modal {
     position: absolute;
@@ -563,6 +605,16 @@ a {
 .options-enabled {
     background-color: #333;
     color: #bbb;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #111;
+    border-radius: 100px;
+    border: 2px solid #666;
+    width: 200px;
+    color: #666;
 }
 
 .hidden {
