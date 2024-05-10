@@ -4,7 +4,7 @@ function reset() {
         // Options
         fontFace: [0],
         autoSave: true,
-    
+        lessFlash: false,
         // Game
         points: new Decimal("0"),
         pointsMulti: new Decimal("1"),

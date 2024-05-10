@@ -82,6 +82,7 @@ let lightMilestoneReqsUI = [
     document.getElementById("light-milestone-req-3"),
 ]
 
+let lessFlashButton = document.getElementById("less-flash-button")
 
 function updateCurrency(c) {
     switch (c) {
@@ -129,6 +130,14 @@ function updateUI() {
     hexCodeValue.textContent = player.hexcode
 
     square.style.backgroundColor = player.hexcode
+
+    if(player.lessFlash){
+        square.classList.add("less-flash")
+        lessFlashButton.classList.add("options-enabled")
+    } else {
+        square.classList.remove("less-flash")
+        lessFlashButton.classList.remove("options-enabled")
+    }
 
     rgbMinUpgrade0.textContent = ("00" + player.rgbMin[0]).slice(-3)
     rgbMinUpgrade1.textContent = ("00" + player.rgbMin[1]).slice(-3)

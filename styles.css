@@ -220,6 +220,13 @@ a {
     transform: scale(99%);
 }
 
+.less-flash {
+    filter:brightness(10%)contrast(60%);
+}
+
+#square.less-flash:hover {
+    filter:brightness(10%)contrast(60%);}
+
 #red-green-blue {
     display: flex;
 }
@@ -533,6 +540,11 @@ a {
 
 .modal-button:hover {
     background-color: #222;
+}
+
+.options-enabled {
+    background-color: #333;
+    color: #bbb;
 }
 
 .hidden {
