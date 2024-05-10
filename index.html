@@ -16,6 +16,9 @@
             <div class="nav-item hidden" id="light-nav" onclick="changeMenu('light')">
                 Light
             </div>
+            <div class="nav-item hidden" id="fidget-toys-nav" onclick="changeMenu('fidget-toys')">
+                Fidget Toys :3
+            </div>
             <div class="nav-item hidden" id="automation-nav" onclick="changeMenu('automation')">
                 Automation
             </div>
@@ -61,6 +64,11 @@
                             <span id="rgb-min-2">000</span><br>
                         </div>
                     </div>
+                    <div class="max-row">
+                        <div class="rgb-button rgb-buy-max" id="rgb-min-buy-max" onclick="buyMaxRGBMin()">
+                            Buy Max
+                        </div>
+                    </div>
                 </div>
                 <div class="rgb-upgrade-panel">
                     <div class="panel-title">
@@ -80,6 +88,11 @@
                             <span id="rgb-max-2">001</span><br>
                         </div>
                     </div>
+                    <div class="max-row">
+                        <div class="rgb-button rgb-buy-max" id="rgb-max-buy-max" onclick="buyMaxRGBMax()">
+                            Buy Max
+                        </div>
+                    </div>
                 </div>
                 <div class="rgb-upgrade-panel">
                     <div class="panel-title">
@@ -97,6 +110,11 @@
                         </div>
                         <div class="rgb-button blue-button" onclick="upgradeColourMulti(2)">
                             <span id="colour-mult-2">1</span>x<br>
+                        </div>
+                    </div>
+                    <div class="max-row">
+                        <div class="rgb-button rgb-buy-max" id="colour-multi-buy-max" onclick="buyMaxColourMulti()">
+                            Buy Max
                         </div>
                     </div>
                 </div>
@@ -128,11 +146,11 @@
                             Costs <span id="light-upgrade-cost-3">1000</span> light</div>
                     </div>
                     <div class="button light-button" id="light-upgrade-4" onclick="buyLightUpgrade(4)">
-                        <div>Unlock photon emitters<br>
+                        <div>Unlock the first fidget toy :3<br>
                             Costs <span id="light-upgrade-cost-4">8000</span> light</div>
                     </div>
                     <div class="button light-button" id="light-upgrade-5" onclick="buyLightUpgrade(5)">
-                        <div>Unlock multi-buying of upgrades<br>
+                        <div>Unlock photon emitters<br>
                             Costs <span id="light-upgrade-cost-5">500000</span> light</div>
                     </div>
                 </div>
@@ -170,7 +188,7 @@
                             <span id="light-milestone-req-3">25000</span> Total Light
                         </div>
                         <div class="milestone-content">
-                            Unlock light reset automation.
+                            Unlock buy max of upgrades.
                         </div>
                     </div>
                 </div>
@@ -335,7 +353,7 @@
                     (+0) 0
                 </div>
                 <div class="currency-tooltip">
-                    AH TOO BRIGHT I CAN'T SEE!!! Click to reset your points and stuff for light.<br>
+                    Click to reset your points and stuff for light. Light gain is based on your total points.<br>
                     You have <span id="light-tooltip">235,003,245</span> total.
                 </div>
             </div>

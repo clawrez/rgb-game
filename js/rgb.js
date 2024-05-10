@@ -54,3 +54,45 @@ function upgradeColourMulti(x) {
 
     player.colourMulti[x]++
 }
+
+function buyMaxRGBMin() {
+    while(Decimal.gte(player.points,player.rgbMinCost)){
+        if(player.rgbMin[1]<player.rgbMin[0]){
+            if(player.rgbMin[2]<player.rgbMin[1]){
+                upgradeRGBMin(2)
+            } else{
+                upgradeRGBMin(1)
+            }
+        } else {
+            upgradeRGBMin(0)
+        }
+    }
+}
+
+function buyMaxRGBMax() {
+    while(Decimal.gte(player.points,player.rgbMaxCost)){
+        if(player.rgbMax[1]<player.rgbMax[0]){
+            if(player.rgbMax[2]<player.rgbMax[1]){
+                upgradeRGBMax(2)
+            } else{
+                upgradeRGBMax(1)
+            }
+        } else {
+            upgradeRGBMax(0)
+        }
+    }
+}
+
+function buyMaxColourMulti() {
+    while(Decimal.gte(player.points,player.colourMultiCost)){
+        if(player.colourMulti[1]<player.colourMulti[0]){
+            if(player.colourMulti[2]<player.colourMulti[1]){
+                upgradeColourMulti(2)
+            } else{
+                upgradeColourMulti(1)
+            }
+        } else {
+            upgradeColourMulti(0)
+        }
+    }
+}
