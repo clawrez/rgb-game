@@ -359,6 +359,8 @@ a {
 
 .rgb-buy-max {
     width: 100%;
+    padding: 3px;
+    font-size: 13px;
     border-color:#666;
 }
 

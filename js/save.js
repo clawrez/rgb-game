@@ -40,7 +40,7 @@ function reset() {
 }
 
 const lightUpgradeCosts = [new Decimal("1"), new Decimal("71"), new Decimal("150"), new Decimal("1000"), new Decimal("8500"), new Decimal("1e6")]
-const lightMilestoneReqs = [new Decimal("1"), new Decimal("15"), new Decimal("325"), new Decimal("25000")]
+const lightMilestoneReqs = [new Decimal("1"), new Decimal("15"), new Decimal("325"), new Decimal("5000")]
 
 
 var saveItemName = "rgb save";
