@@ -1,8 +1,10 @@
 let squareHovered = false
 
+let rollDoubled = false
+
 let rgbRoll = setInterval(() => {
     if(squareHovered) {rollRGB()}
-}, rollInterval);
+}, 1000/6);
 
 
 
@@ -16,6 +18,7 @@ function rollRGB() {
     let bPoints = Decimal.times(Decimal.pow("2",player.colourMulti[2]),Decimal.add(1,player.rgb[2]))
 
     updateCurrency("points")
+    
     player.points = Decimal.add(player.points,Decimal.times(Decimal.times(Decimal.times(rPoints,gPoints),bPoints),player.pointsMulti))
     player.totalPoints = Decimal.add(player.totalPoints,Decimal.times(Decimal.times(Decimal.times(rPoints,gPoints),bPoints),player.pointsMulti))
     convertToHex()
@@ -50,4 +53,46 @@ function upgradeColourMulti(x) {
     player.colourMultiCost = Decimal.floor(Decimal.times(player.colourMultiCost,"2.8"))
 
     player.colourMulti[x]++
+}
+
+function buyMaxRGBMin() {
+    while(Decimal.gte(player.points,player.rgbMinCost)){
+        if(player.rgbMin[1]<=player.rgbMin[2]){
+            if(player.rgbMin[0]<=player.rgbMin[1]){
+                upgradeRGBMin(0)
+            } else{
+                upgradeRGBMin(1)
+            }
+        } else {
+            upgradeRGBMin(2)
+        }
+    }
+}
+
+function buyMaxRGBMax() {
+    while(Decimal.gte(player.points,player.rgbMaxCost)){
+        if(player.rgbMax[1]<=player.rgbMax[2]){
+            if(player.rgbMax[0]<=player.rgbMax[1]){
+                upgradeRGBMax(0)
+            } else{
+                upgradeRGBMax(1)
+            }
+        } else {
+            upgradeRGBMax(2)
+        }
+    }
+}
+
+function buyMaxColourMulti() {
+    while(Decimal.gte(player.points,player.colourMultiCost)){
+        if(player.colourMulti[1]<=player.colourMulti[2]){
+            if(player.colourMulti[0]<=player.colourMulti[1]){
+                upgradeColourMulti(0)
+            } else{
+                upgradeColourMulti(1)
+            }
+        } else {
+            upgradeColourMulti(2)
+        }
+    }
 }
