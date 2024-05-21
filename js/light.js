@@ -1,5 +1,5 @@
-function lightReset() {
-    if(Decimal.lt(player.potentialLight,1))return
+function lightReset(force = false) {
+    if(Decimal.lt(player.potentialLight,1)&&force == false)return
     if(player.unlockedLight == false){
         player.unlockedLight = true
     }

@@ -48,7 +48,7 @@ function upgradeRGBMax(x) {
 }
 
 function upgradeColourMulti(x) {
-    if(Decimal.lt(player.points,player.colourMultiCost)) return
+    if(Decimal.lt(player.points,player.colourMultiCost)||player.activeChallenge==0) return
     player.points = Decimal.minus(player.points,player.colourMultiCost)
     player.colourMultiCost = Decimal.floor(Decimal.times(player.colourMultiCost,Decimal.times("2.8",player.rgbCostScaling)))
 
@@ -96,6 +96,7 @@ function buyMaxRGBMax() {
 }
 
 function buyMaxColourMulti() {
+    if(player.activeChallenge==0)return
     while(Decimal.gte(player.points,player.colourMultiCost)){
         if(player.colourMulti[1]<=player.colourMulti[2]){
             if(player.colourMulti[0]<=player.colourMulti[1]){
