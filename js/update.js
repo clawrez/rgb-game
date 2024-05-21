@@ -29,6 +29,9 @@ setInterval(() => {
     if (player.lightMilestones[2]) {
         player.startingPoints = new Decimal("1000000")
     }
+    if (player.lightMilestones[4]){
+        player.unlockedChallenges = true
+    }
 
     // Light Upgrades
     if (player.lightUpgrades[0]) {

@@ -10,6 +10,9 @@ function reset() {
         unlockedLight: false,
         unlockedFidgetToys: false,
         unlockedPhotonEmitters: false,
+        unlockedChallenges: false,
+        // Challenges
+        activeChallenge: 0,
         // Fidgets
         colourClickerTime: 0,
         // Game
@@ -71,7 +74,7 @@ function reset() {
 }
 
 const lightUpgradeCosts = [new Decimal("1"), new Decimal("71"), new Decimal("150"), new Decimal("1000"), new Decimal("8500"), new Decimal("20000")]
-const lightMilestoneReqs = [new Decimal("1"), new Decimal("15"), new Decimal("325"), new Decimal("5000")]
+const lightMilestoneReqs = [new Decimal("1"), new Decimal("15"), new Decimal("325"), new Decimal("5000"), new Decimal("1.5e8")]
 
 
 var saveItemName = "rgb save";

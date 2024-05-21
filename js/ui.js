@@ -13,6 +13,7 @@ let photonsTooltip = document.getElementById("photons-tooltip")
 
 let lightNav = document.getElementById("light-nav")
 let fidgetToysNav = document.getElementById("fidget-toys-nav")
+let challengesNav = document.getElementById("challenges-nav")
 
 let redNumber = document.getElementById("red")
 let greenNumber = document.getElementById("green")
@@ -74,6 +75,8 @@ let lightMilestonesUI = [
     document.getElementById("light-milestone-1"),
     document.getElementById("light-milestone-2"),
     document.getElementById("light-milestone-3"),
+    document.getElementById("light-milestone-4"),
+
 ]
 
 let lightMilestoneReqsUI = [
@@ -81,6 +84,7 @@ let lightMilestoneReqsUI = [
     document.getElementById("light-milestone-req-1"),
     document.getElementById("light-milestone-req-2"),
     document.getElementById("light-milestone-req-3"),
+    document.getElementById("light-milestone-req-4"),
 ]
 
 let lessFlashButton = document.getElementById("less-flash-button")
@@ -250,4 +254,8 @@ function updateUI() {
     photonBoostStat.textContent = format(player.lightMultis[0],1)
 
     colourClickerTimeDisplay.textContent = ('0' + (Math.floor(player.colourClickerTime / 60)) % 60).slice(-2) + ":" + ('0' + Math.floor(player.colourClickerTime) % 60).slice(-2)
+
+    if(player.unlockedChallenges){
+        challengesNav.classList.remove("hidden")
+    }
 }

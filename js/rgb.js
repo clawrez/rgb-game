@@ -33,7 +33,7 @@ function convertToHex() {
 }
 
 function upgradeRGBMin(x) {
-    if(Decimal.lt(player.points,player.rgbMinCost)||player.rgbMax[x]==player.rgbMin[x]) return
+    if(Decimal.lt(player.points,player.rgbMinCost)||player.rgbMax[x]==player.rgbMin[x])
     player.points = Decimal.minus(player.points,player.rgbMinCost)
     player.rgbMinCost = Decimal.floor(Decimal.times(player.rgbMinCost,Decimal.times("1.7",player.rgbCostScaling)))
     player.rgbMin[x]++
@@ -59,12 +59,24 @@ function buyMaxRGBMin() {
     while(Decimal.gte(player.points,player.rgbMinCost)){
         if(player.rgbMin[1]<=player.rgbMin[2]){
             if(player.rgbMin[0]<=player.rgbMin[1]){
-                upgradeRGBMin(0)
+                if(player.rgbMax[0]==player.rgbMin[0]){
+                    return
+                } else {
+                    upgradeRGBMin(0)
+                }
             } else{
-                upgradeRGBMin(1)
+                if(player.rgbMax[1]==player.rgbMin[1]){
+                    return
+                } else {
+                    upgradeRGBMin(1)
+                }
             }
         } else {
-            upgradeRGBMin(2)
+            if(player.rgbMax[2]==player.rgbMin[2]){
+                return
+            } else {
+                upgradeRGBMin(2)
+            }
         }
     }
 }
