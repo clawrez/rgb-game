@@ -33,7 +33,7 @@ function convertToHex() {
 }
 
 function upgradeRGBMin(x) {
-    if(Decimal.lt(player.points,player.rgbMinCost)||player.rgbMax[x]==player.rgbMin[x])
+    if(Decimal.lt(player.points,player.rgbMinCost)||player.rgbMax[x]==player.rgbMin[x])return
     player.points = Decimal.minus(player.points,player.rgbMinCost)
     player.rgbMinCost = Decimal.floor(Decimal.times(player.rgbMinCost,Decimal.times("1.7",player.rgbCostScaling)))
     player.rgbMin[x]++
