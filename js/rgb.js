@@ -50,7 +50,7 @@ function upgradeRGBMax(x) {
 function upgradeColourMulti(x) {
     if(Decimal.lt(player.points,player.colourMultiCost)) return
     player.points = Decimal.minus(player.points,player.colourMultiCost)
-    player.colourMultiCost = Decimal.floor(Decimal.times(player.colourMultiCost,"2.8"))
+    player.colourMultiCost = Decimal.floor(Decimal.times(player.colourMultiCost,Decimal.times("2.8",player.rgbCostScaling)))
 
     player.colourMulti[x]++
 }
