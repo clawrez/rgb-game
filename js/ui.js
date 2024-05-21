@@ -89,6 +89,28 @@ let photonEmittersContainer = document.getElementById("photon-emitter-container"
 
 let colourClickerTimeDisplay = document.getElementById("colour-clicker-time")
 
+let photonEmittersQuantities = [
+    document.getElementById("emitter-quantity-0"),
+    document.getElementById("emitter-quantity-1"),
+    document.getElementById("emitter-quantity-2"),
+    document.getElementById("emitter-quantity-3"),
+]
+
+let photonEmittersMultis = [
+    document.getElementById("emitter-multi-0"),
+    document.getElementById("emitter-multi-1"),
+    document.getElementById("emitter-multi-2"),
+    document.getElementById("emitter-multi-3"),
+]
+
+let photonEmittersCosts = [
+    document.getElementById("emitter-buy-0"),
+    document.getElementById("emitter-buy-1"),
+    document.getElementById("emitter-buy-2"),
+    document.getElementById("emitter-buy-3"),
+]
+
+let photonBoostStat = document.getElementById("photon-boost-stat")
 
 function updateCurrency(c) {
     switch (c) {
@@ -218,6 +240,14 @@ function updateUI() {
         photonEmittersContainer.classList.remove("hidden")
         photonsContainer.classList.remove("hidden")
     }
+
+    for(let i = 0;i < photonEmittersQuantities.length; i++){
+        photonEmittersQuantities[i].textContent = formatWhole(player.photonEmitters[i].quant, true)
+        photonEmittersMultis[i].textContent = format(player.photonEmitters[i].mult, 1) + "x"
+        photonEmittersCosts[i].textContent = "Costs " + formatWhole(player.photonEmitters[i].cost, true) + " light"
+    }
+
+    photonBoostStat.textContent = format(player.lightMultis[0],1)
 
     colourClickerTimeDisplay.textContent = ('0' + (Math.floor(player.colourClickerTime / 60)) % 60).slice(-2) + ":" + ('0' + Math.floor(player.colourClickerTime) % 60).slice(-2)
 }

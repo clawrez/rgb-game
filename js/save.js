@@ -41,6 +41,8 @@ function reset() {
         potentialLight: new Decimal("0"),
         lightUpgrades: [],
         lightMilestones: [],
+        lightMultis: [new Decimal("1")],
+        lightMulti: new Decimal("1"),
         photons: new Decimal("0"),
         totalPhotons: new Decimal("0"),
         photonEmitters: [
