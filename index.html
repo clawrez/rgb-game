@@ -99,7 +99,7 @@
                 </div>
                 <div class="rgb-upgrade-panel">
                     <div class="panel-title">
-                        Colour Multiplier
+                        Point Multiplier
                     </div>
                     <div>
                         Costs <span id="colour-mult-cost">1000</span>
@@ -275,6 +275,21 @@
                 <div class="title-row">
                     Light Challenges
                 </div>
+                <div class="button-row">
+                    <div class="panel challenge-panel" id="challenge-0">
+                        <div class="panel-title">
+                            No Multi
+                        </div>
+                        <div class="challenge-desc">
+                            Point multiplier upgrades cannot be bought. Get to 1.00e9 points.
+                        </div>
+                        <div class="challenges-buttons">
+                            <div class="button challenge-button" id="challenge-button-0" onclick="toggleChallenge(0)">
+                                Start
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="menu hidden" id="fidget-toys-menu">
@@ -435,6 +450,7 @@
     <script src="js/rgb.js"></script>
     <script src="js/light.js"></script>
     <script src="js/photons.js"></script>
+    <script src="js/challenges.js"></script>
     <script src="js/update.js"></script>
     <script src="js/ui.js"></script>
     <script src="js/nav.js"></script>

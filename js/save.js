@@ -12,7 +12,8 @@ function reset() {
         unlockedPhotonEmitters: false,
         unlockedChallenges: false,
         // Challenges
-        activeChallenge: 0,
+        challengesCompleted: [false],
+        activeChallenge: -1,
         // Fidgets
         colourClickerTime: 0,
         // Game
