@@ -9,6 +9,7 @@ function reset() {
         // Unlocks
         unlockedLight: false,
         unlockedFidgetToys: false,
+        unlockedPhotonEmitters: false,
         // Fidgets
         colourClickerTime: 0,
         // Game
@@ -42,7 +43,28 @@ function reset() {
         lightMilestones: [],
         photons: new Decimal("0"),
         totalPhotons: new Decimal("0"),
-        
+        photonEmitters: [
+            {
+                quant: new Decimal("0"),
+                mult: new Decimal("1"),
+                cost: new Decimal("1e3")
+            },
+            {
+                quant: new Decimal("0"),
+                mult: new Decimal("1"),
+                cost: new Decimal("1e7")
+            },
+            {
+                quant: new Decimal("0"),
+                mult: new Decimal("1"),
+                cost: new Decimal("1e11")
+            },
+            {
+                quant: new Decimal("0"),
+                mult: new Decimal("1"),
+                cost: new Decimal("1e15")
+            },
+        ],
     }
 }
 

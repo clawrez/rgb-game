@@ -85,6 +85,8 @@ let lightMilestoneReqsUI = [
 
 let lessFlashButton = document.getElementById("less-flash-button")
 
+let photonEmittersContainer = document.getElementById("photon-emitter-container")
+
 let colourClickerTimeDisplay = document.getElementById("colour-clicker-time")
 
 
@@ -210,6 +212,11 @@ function updateUI() {
         buyMaxes.forEach(buyM => {
             buyM.classList.remove("hidden")
         })
+    }
+
+    if(player.unlockedPhotonEmitters){
+        photonEmittersContainer.classList.remove("hidden")
+        photonsContainer.classList.remove("hidden")
     }
 
     colourClickerTimeDisplay.textContent = ('0' + (Math.floor(player.colourClickerTime / 60)) % 60).slice(-2) + ":" + ('0' + Math.floor(player.colourClickerTime) % 60).slice(-2)

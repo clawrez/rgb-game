@@ -54,17 +54,20 @@ setInterval(() => {
     if(player.lightUpgrades[4]){
         player.unlockedFidgetToys = true
     }
-
+    if(player.lightUpgrades[5]){
+        player.unlockedPhotonEmitters = true
+    }
     // Fidget Toys
     if(player.colourClickerTime < 0.1) {
         player.colourClickerTime = 0
     }
     if (player.colourClickerTime > 0){
        player.colourClickerTime -= 1 * dt
-       player.pointMultis[2] = new Decimal("3")
+       player.pointMultis[2] = new Decimal("10")
     } else {
         player.pointMultis[2] = new Decimal("1")
     }
     
-    
+    // Photons
+    player
 }, 1000 / 30);
