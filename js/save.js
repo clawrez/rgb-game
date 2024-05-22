@@ -12,7 +12,10 @@ function reset() {
         unlockedPhotonEmitters: false,
         unlockedChallenges: false,
         // Challenges
-        activeChallenge: 0,
+        challengesCompleted: [false],
+        activeChallenge: -1,
+        currentChallengeCurrency: "points",
+        challengePendingCompletion: false,
         // Fidgets
         colourClickerTime: 0,
         // Game
@@ -76,6 +79,9 @@ function reset() {
 const lightUpgradeCosts = [new Decimal("1"), new Decimal("71"), new Decimal("150"), new Decimal("1000"), new Decimal("8500"), new Decimal("20000")]
 const lightMilestoneReqs = [new Decimal("1"), new Decimal("15"), new Decimal("325"), new Decimal("5000"), new Decimal("1.5e8")]
 
+const challengeReqs = [
+    new Decimal("1e9"), // points
+]
 
 var saveItemName = "rgb save";
 

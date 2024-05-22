@@ -16,6 +16,9 @@
             <div class="nav-item hidden" id="light-nav" onclick="changeMenu('light')">
                 Light
             </div>
+            <div class="nav-item hidden" id="lasers-nav" onclick="changeMenu('lasers')">
+                Lasers
+            </div>
             <div class="nav-item hidden" id="challenges-nav" onclick="changeMenu('challenges')">
                 Challenges
             </div>
@@ -99,7 +102,7 @@
                 </div>
                 <div class="rgb-upgrade-panel">
                     <div class="panel-title">
-                        Colour Multiplier
+                        Point Multiplier
                     </div>
                     <div>
                         Costs <span id="colour-mult-cost">1000</span>
@@ -141,13 +144,12 @@
                         <div>Make upgrade cost scaling 5% better<br>
                             Costs <span id="light-upgrade-cost-2">150</span> light</div>
                     </div>
-
-                </div>
-                <div class="button-row">
                     <div class="button light-button" id="light-upgrade-3" onclick="buyLightUpgrade(3)">
                         <div>Straight up just like... 4x points<br>
                             Costs <span id="light-upgrade-cost-3">1000</span> light</div>
                     </div>
+                </div>
+                <div class="button-row">
                     <div class="button light-button" id="light-upgrade-4" onclick="buyLightUpgrade(4)">
                         <div>Unlock the first fidget toy :3<br>
                             Costs <span id="light-upgrade-cost-4">8000</span> light</div>
@@ -155,6 +157,10 @@
                     <div class="button light-button" id="light-upgrade-5" onclick="buyLightUpgrade(5)">
                         <div>Unlock photon emitters<br>
                             Costs <span id="light-upgrade-cost-5">500000</span> light</div>
+                    </div>
+                    <div class="button light-button" id="light-upgrade-5" onclick="buyLightUpgrade(6)">
+                        <div>Unlock lasers<br>
+                            Costs <span id="light-upgrade-cost-6">1e10</span> light</div>
                     </div>
                 </div>
 
@@ -274,6 +280,24 @@
             <div class="menu hidden" id="challenges-menu">
                 <div class="title-row">
                     Light Challenges
+                </div>
+                <div class="button-row">
+                    <div class="panel challenge-panel" id="challenge-0">
+                        <div class="panel-title">
+                            No Multi
+                        </div>
+                        <div class="challenge-desc">
+                            Point multiplier upgrades cannot be bought. Get to 1.00e9 points.
+                        </div>
+                        <div class="challenge-reward">
+                            Reward: 10x multiplier to light gain
+                        </div>
+                        <div class="challenges-buttons">
+                            <div class="button challenge-button" id="challenge-button-0" onclick="toggleChallenge(0,`points`)">
+                                Start
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -435,6 +459,7 @@
     <script src="js/rgb.js"></script>
     <script src="js/light.js"></script>
     <script src="js/photons.js"></script>
+    <script src="js/challenges.js"></script>
     <script src="js/update.js"></script>
     <script src="js/ui.js"></script>
     <script src="js/nav.js"></script>

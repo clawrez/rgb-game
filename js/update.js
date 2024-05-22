@@ -11,7 +11,7 @@ setInterval(() => {
     player.pointsMulti = player.pointMultis.reduce((a, b) => Decimal.times(a, b))
     player.lightMulti = player.lightMultis.reduce((a, b) => Decimal.times(a, b))
     // Light
-    player.potentialLight = Decimal.floor(Decimal.times(Decimal.pow(Decimal.divide(player.totalPoints, "1e9"), "0.33"),player.lightMulti))
+    player.potentialLight = Decimal.floor(Decimal.times(Decimal.pow(Decimal.divide(player.totalPoints, "1e9"), "0.33"), player.lightMulti))
 
     // Light Milestones
     for (let i = 0; i < lightMilestoneReqs.length; i++) {
@@ -29,7 +29,7 @@ setInterval(() => {
     if (player.lightMilestones[2]) {
         player.startingPoints = new Decimal("1000000")
     }
-    if (player.lightMilestones[4]){
+    if (player.lightMilestones[4]) {
         player.unlockedChallenges = true
     }
 
@@ -83,8 +83,30 @@ setInterval(() => {
     player.photonEmitters[2].quant = Decimal.add(player.photonEmitters[2].quant, Decimal.times(Decimal.times(player.photonEmitters[3].quant, player.photonEmitters[3].mult), dt))
 
     if (Decimal.gt(player.photons, "0")) {
-        player.lightMultis[0] = Decimal.add("1",Decimal.pow(Decimal.divide(player.photons, "1"), "0.33"))
+        player.lightMultis[0] = Decimal.add("1", Decimal.pow(Decimal.divide(player.photons, "1"), "0.33"))
     } else {
         player.lightMultis[0] = new Decimal("1")
     }
+
+    // Challenges
+    if (player.activeChallenge > (-1)) {
+        if (player.currentChallengeCurrency == "points") {
+            if (Decimal.gte(player.points, challengeReqs[player.activeChallenge])) {
+                player.challengePendingCompletion = true
+            } else {
+                player.challengePendingCompletion = false
+            }
+        }
+    } else {
+        player.challengePendingCompletion = false
+    }
+
+    // Challenge Rewards
+    if (player.challengesCompleted[0]) {
+        player.lightMultis[1] = new Decimal("10")
+    } else {
+        player.lightMultis[1] = new Decimal("1")
+    }
+
+
 }, 1000 / 30);

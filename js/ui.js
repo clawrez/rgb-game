@@ -116,6 +116,14 @@ let photonEmittersCosts = [
 
 let photonBoostStat = document.getElementById("photon-boost-stat")
 
+let challengePanels = [
+    document.getElementById("challenge-0"),
+]
+
+let challengeButtons = [
+    document.getElementById("challenge-button-0"),
+]
+
 function updateCurrency(c) {
     switch (c) {
         case 'points':
@@ -258,4 +266,34 @@ function updateUI() {
     if(player.unlockedChallenges){
         challengesNav.classList.remove("hidden")
     }
+
+    for(let i=0;i<challengeReqs.length;i++){
+        if(player.activeChallenge == i){
+            challengePanels[i].classList.add("active-challenge")
+            challengeButtons[i].textContent = "Exit"
+        } else {
+            challengePanels[i].classList.remove("active-challenge")
+            challengeButtons[i].textContent = "Start"
+        }
+
+        if(player.challengesCompleted[i]){
+            challengePanels[i].classList.add("completed-challenge")
+        } else {
+            challengePanels[i].classList.remove("completed-challenge")
+        }
+    }
+
+    if(player.activeChallenge>(-1)){
+        challengesNav.classList.add("active-challenge-nav")
+    } else {
+        challengesNav.classList.remove("active-challenge-nav")
+    }
+
+    if(player.challengePendingCompletion){
+        challengesNav.classList.add("pending-complete-challenge-nav")
+    } else {
+        challengesNav.classList.remove("pending-complete-challenge-nav")
+
+    }
+    
 }
